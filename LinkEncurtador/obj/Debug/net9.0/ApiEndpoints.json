@@ -1,0 +1,60 @@
+[
+  {
+    "ContainingType": "LinkEncurtador.Controllers.LinkEncurtadorController",
+    "Method": "GetLink",
+    "RelativePath": "{short_url}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "short_url",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LinkEncurtador.Controllers.LinkEncurtadorController",
+    "Method": "DeleteLink",
+    "RelativePath": "api/links/{short_code}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "short_code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LinkEncurtador.Controllers.LinkEncurtadorController",
+    "Method": "PostLink",
+    "RelativePath": "api/shorten",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "urlOriginal",
+        "Type": "LinkEncurtador.Data.DTOs.ShortenDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LinkEncurtador.Controllers.LinkEncurtadorController",
+    "Method": "GetLinks",
+    "RelativePath": "links",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

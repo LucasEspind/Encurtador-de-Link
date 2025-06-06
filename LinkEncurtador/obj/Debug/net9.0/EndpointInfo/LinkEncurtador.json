@@ -1,0 +1,110 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "LinkEncurtador",
+    "version": "1.0"
+  },
+  "paths": {
+    "/links": {
+      "get": {
+        "tags": [
+          "LinkEncurtador"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{short_url}": {
+      "get": {
+        "tags": [
+          "LinkEncurtador"
+        ],
+        "parameters": [
+          {
+            "name": "short_url",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/shorten": {
+      "post": {
+        "tags": [
+          "LinkEncurtador"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShortenDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShortenDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShortenDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/links/{short_code}": {
+      "delete": {
+        "tags": [
+          "LinkEncurtador"
+        ],
+        "parameters": [
+          {
+            "name": "short_code",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ShortenDTO": {
+        "type": "object",
+        "properties": {
+          "url_Original": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
